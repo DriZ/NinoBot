@@ -1,6 +1,7 @@
 const bot = new (require('./structures/NinoBotCore'))(process.env.TOKEN);
 const app = require('express')();
 const moment = require('moment-timezone');
+const http = require('http');
 bot.config = require('./config');
 
 app.get("/", (request, response) => {
