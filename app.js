@@ -10,6 +10,11 @@ app.get("/", (request, response) => {
     response.sendStatus(200);
 });
 
+app.listen(process.env.PORT || 5000);
+setInterval(() => {
+    http.get(`http://${process.env.PROJECT_DOMAIN}.herokuapp.com/`);
+}, 280000);
+
 bot.use(require('telegraf').Telegraf.log());
 
 bot.start(ctx => {
